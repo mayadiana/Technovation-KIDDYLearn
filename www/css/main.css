@@ -1,23 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-:root{
+:root {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 
-.logoContainer{
+.topContainer {
+    position: fixed;
     box-sizing: border-box;
-    width: 390px;
-    height: 257px;
-    background: #7C95E0;
-    backdrop-filter: blur(2px);
-    width: 100%;
-    border-radius: 0px 0px 25px 25px;
-}
-
-.topContainer{
-    box-sizing: border-box;
-    width: 390px;
     height: 138px;
     background: #7C95E0;
     backdrop-filter: blur(2px);
@@ -41,13 +31,13 @@ body {
     width: 100%;
     overflow: auto;
     background: #273350;
-    flex-direction: column;
+    /* flex-direction: column; */
     flex-grow: 1;
-    display: flex;
+    display: table-column;
+    overflow-y: scroll;
 }
 
 .AuthLabel {
-    width: 100%;
     height: 45px;
     font-family: 'Inter';
     font-style: normal;
@@ -62,7 +52,6 @@ body {
 }
 
 .AuthContainer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 32px;
@@ -82,34 +71,13 @@ body {
 }
 
 .mainDiv {
-    top: 250px;
+    top: 138px;
     width: 100%;
+    position: relative;
+    overflow-y: scroll;
 }
 
 .text1 {
-    position: relative;
-    width: 253px;
-    height: 45px;
-    left: 76px;
-    top: 120px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    margin: 0;
-
-    /* margin-right: 0; */
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-    color: #FFFFFF;
-    text-decoration: 1px solid #00337C;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-.text2 {  
     position: relative;
     width: 108px;
     height: 0px;
@@ -126,8 +94,8 @@ body {
     color: #FFFFFF;
 }
 
-.baseButton{
-    width: 205px;
+.smallButton {
+    width: 175px;
     height: 54px;
     position: relative;
     left: 46px;
@@ -150,113 +118,33 @@ body {
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-.clickButton1{
+.baseButton {
     width: 80%;
-    height: 17%;
+    height: 140px;
+    margin: 30px;
+    margin-right: 0;
     position: relative;
-    margin: 39%;
-    left: -34%;
-    background: #EDB2E6;
-    border-radius: 25px;
-    padding-left: 37px;
-
+    padding-left: 20px;
+    
     font-family: 'Inter';
-    position: absolute;
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
+    border-radius: 25px;
     line-height: 45px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #FFFFFF;
-    border: 1px solid solid #9D3C72;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-
-.clickButton2{
-    width: 80%;
-    height: 17%;
+.text2 {
     position: relative;
-    margin: 75%;
-    left: -63%;
-    background: #ADA2FF;
-    border-radius: 25px;
-    padding-left: 37px;
-
-    font-family: 'Inter';
-    position: absolute;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    border: 1px solid solid #9D3C72;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-
-.clickButton3{
-    width: 80%;
-    height: 17%;
-    position: relative;
-    margin: 460px;
-    left: -410px;
-    background: #81E7AA;
-    border-radius: 25px;
-    padding-left: 37px;
-
-    font-family: 'Inter';
-    position: absolute;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    border: 1px solid solid #9D3C72;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-
-.clickButton4{
-    width: 80%;
-    height: 17%;
-    position: relative;
-    margin: 610px;
-    left: -560px;
-    background: #FEAB80;
-    border-radius: 25px;
-    padding-left: 37px;
-
-    font-family: 'Inter';
-    position: absolute;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    border: 1px solid solid rgb(0 0 0 / 25%);
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-
-
-.text3 {  
-    position: absolute;
-    width: 120px;
-    height: 45px;
+    width: 100%;
     margin: 0;
-    left: 37px;
-    top: 28px;
+    left: 10%;
+    top: 19%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -266,30 +154,11 @@ body {
     align-items: center;
     text-align: center;
     color: #FFFFFF;
-    text-shadow: 0px 4px 4px  rgb(0 0 0 / 25%);
-   
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
 }
 
-.text4 {  
-    position: absolute;
-    width: 136px;
-    height: 45px;
-    margin: 0;
-    left: 37px;
-    top: 73px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 4px  rgb(0 0 0 / 25%);
-}
-
-form {
+.form {
     position: relative;
     margin: 11%;
     top: 30px;
@@ -301,35 +170,38 @@ form {
     flex-direction: row;
     align-items: center;
     border-radius: 25px;
-  }
-  input {
+}
+
+.input {
     all: unset;
     font: 16px system-ui;
     color: #808080;
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-  }
-  ::placeholder {
+}
+
+::placeholder {
     color: #808080;
-    opacity: 0.7; 
-  }
-  button {
+    opacity: 0.7;
+}
+
+button {
     all: unset;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
-  }
-  
-  svg {
+    width: 40px;
+    height: 40px;
+}
+
+svg {
     color: #273350;
     fill: currentColor;
     width: 24px;
     height: 24px;
     padding: 10px;
-  }
+}
 
-  .clickButton5{
+.clickButton5 {
     width: 70%;
     height: 16%;
     position: relative;
@@ -352,7 +224,7 @@ form {
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-.text5 {  
+.text5 {
     position: absolute;
     width: 159px;
     height: 45px;
@@ -370,11 +242,107 @@ form {
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
+
 div.scroll {
-  background: #273350;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  align-items: center;
+    background: #273350;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-right: 5%;
+}
+
+.baseSearch {
+    outline: none;
+    height: 50px;
+    border: 2px solid rgba(93, 120, 247, 0.15);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    margin: 30px;
+    width: calc(100% - 60px);
+    margin-top: 60px;
+}
+
+.baseSearch > input {
+    flex-grow: 1;
+    outline: none;
+    width: calc(100% - 10px);
+    max-width: unset;
+    height: 100%;
+    padding: 15px;
+    border: none;
+    filter: none;
+    border-radius: 0;
+    padding: 0px;
+    font-size: 20px;
+}
+
+.baseSearch>img {
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    background: #FFFFFF;
+}
+
+.bottomNav {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: #7C95E0;
+}
+
+.bottomNav button {
+    width: 40px;
+    height: 40px;
+    box-shadow: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 0;
+    border-radius: 0;
+    filter: none;
+}
+
+.home {
+    background-image: url(../assets/bottomNav/home.png);
+}
+
+.home.active {
+    background-image: url(../assets/bottomNav/home-filled.png);
+}
+
+.search {
+    background-image: url(../assets/bottomNav/search.png);
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.search.active {
+    background-image: url(../assets/bottomNav/search-filled.png);
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.profile {
+    background-image: url(../assets/bottomNav/profile.png);
+}
+
+.profile.active {
+    background-image: url(../assets/bottomNav/profile-filled.png);
 }

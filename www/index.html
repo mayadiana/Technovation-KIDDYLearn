@@ -9,15 +9,15 @@
     <!-- <script src='js/main.js' type='module' defer></script> -->
     <script src="db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
     <script src="db/login-db.js" type="module"></script>
-    <title>Document</title>
+    <title>Index</title>
 </head>
 
 <body>
     <div class="body">
-        <div class="logoContainer">
-            <p class="text1">Bine ai revenit!</p>
+        <div class="topContainer" style="height: 257px;">
+            <p class="text2" style="left: 18%; top: 42%; font-size: 36px;">Bine ai revenit!</p>
         </div>
-        <form id="login-form" class="mainDiv">
+        <form id="login-form" class="mainDiv" style="top: 257px;">
             <div class="AuthContainer">
                 <p class="AuthLabel">Email</p>
                 <input name="email" type="email" class="baseInput">
@@ -26,9 +26,9 @@
                 <p class="AuthLabel">Parola</p>
                 <input name="password" type="password" class="baseInput">
             </div>
-            <button type="submit" class="baseButton">Conectează-te</button>
-            <p class="text2">Nu ai cont deja?</p>
-            <button type="submit" class="baseButton">Înregistrează-te</button>
+            <button type="submit" class="smallButton">Conectează-te</button>
+            <p class="text1" >Nu ai cont deja?</p>
+            <button type="submit" class="smallButton">Înregistrează-te</button>
             <!-- aici ne va duce catre create account -->
         </form>
     </div>
