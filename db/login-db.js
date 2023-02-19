@@ -1,5 +1,3 @@
-import { getLoggedUser } from '../js/Utils.js';
-
 const loginForm = document.getElementById("login-form");
 
 async function login(event) {
@@ -13,19 +11,9 @@ async function login(event) {
       .auth()
       .signInWithEmailAndPassword(email, password);
     // Signed in
-    let user = await getLoggedUser();
   } catch (error) {
     alert(error.message);
   }
 }
-
-firebase.auth().onAuthStateChanged(async user => {
-  if (user) {
-    let user = await getLoggedUser();
-    try {
-        Node.Plugins.SplashScreen.hide()
-    } catch {}
-}
-});
 
 loginForm.onsubmit = (event) => login(event);
