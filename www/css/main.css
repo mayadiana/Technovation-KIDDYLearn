@@ -259,6 +259,24 @@ div.scroll {
     margin-right: 5%;
 }
 
+.circle {
+    position: fixed;
+    background: #E5E0FF;
+    height: 200px;
+    width: 200px;
+    left: 24%;
+    border-radius: 100px;
+    top: 117px;
+    display: flex;
+}
+
+.profileBlue {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    margin: 25px;
+}
+
 .baseSearch {
     outline: none;
     height: 50px;
