@@ -4,7 +4,8 @@ const registerForm = document.getElementById("register-form");
 
 function RegisterUser(event) {
     event.preventDefault();
-    const name = event.target["name"].value;
+    const lastName = event.target["lastName"].value;
+    const firstName = event.target["firstName"].value;
     const email = event.target["email"].value;
     const password = event.target["password"].value;
     const confirmPassword = event.target["confirm-password"].value;
@@ -14,12 +15,12 @@ function RegisterUser(event) {
         return;
     }
 
-    loading.show();
     firebase.auth().createUserWithEmailAndPassword(email, password).then(userCredential => {
         // Signed in
         let user = userCredential.user;
         firebase.firestore().collection("users").set({
-            name: name,
+            lastName: lastName,
+            firstName: firstName,
             email: email,
 
         }).then(() => {
@@ -33,4 +34,4 @@ function RegisterUser(event) {
    });
 }
 
-registerForm.onsubmit = location.href.includes("doc").RegisterUser;
+registerForm.onsubmit = location.RegisterUser;
