@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <script src='js/main.js' type='module' defer></script> -->
+    <script src="../www/db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
+    <script src="../www//db/login-db.js" type="module"></script>
+    <script src="../www//db/register-db.js" type="module" defer></script>
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="body">
+        <div class="topContainer" style="height: 257px;">
+            <p class="text2" style="left: 18%; top: 42%; font-size: 36px;">Bine ai revenit!</p>
+        </div>
+        <form id="login-form" class="mainDiv" style="top: 257px;">
+            <div class="AuthContainer">
+                <p class="AuthLabel">Email</p>
+                <input name="email" type="email" class="baseInput">
+            </div>
+            <div class="AuthContainer">
+                <p class="AuthLabel">Parola</p>
+                <input name="password" type="password" class="baseInput">
+            </div>
+            <a href="../www/html/home.html">
+                <button type="submit" class="smallButton">Conectează-te</button>
+            </a>
+            <p class="text1">Nu ai cont deja?</p>
+            <a class="text1" href="../www/html/signUp.html" style="text-decoration: underline;">Înregistrează-te</a> 
+            <!-- <a href="../www/html/signUp.html">
+                <button type="submit" class="smallButton">Înregistrează-te</button>
+            </a>-->
+            <!-- style="background-color: #ffffff; color: #7C95E0" -->
+            <!-- aici ne va duce catre create account -->
+        </form>
+    </div>
+</body>
+
+</html>
