@@ -34,4 +34,4 @@ function RegisterUser(event) {
    });
 }
 
-registerForm.onsubmit = location.RegisterUser;
+registerForm.onsubmit = RegisterUser;
