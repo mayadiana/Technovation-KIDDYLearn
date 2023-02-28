@@ -10,10 +10,11 @@ async function login(event) {
     let userCredential = await firebase
       .auth()
       .signInWithEmailAndPassword(email, password);
+    location = "html/home.html";
     // Signed in
   } catch (error) {
     alert(error.message);
   }
 }
 
-loginForm.onsubmit = (event) => login(event);
+loginForm.onsubmit = event => login(event);

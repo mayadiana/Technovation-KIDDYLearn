@@ -20,15 +20,8 @@
     position: relative;
     margin-top: 20px;
     padding-bottom: 15px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 25px;
     display: flex;
     align-items: center;
-    text-align: center;
-    color: #FFFFFF;
     border-bottom: 2px solid #ffffff;
 }
 
@@ -47,6 +40,24 @@
 
 .dualDiv .profileDate {
     width: 48%;
+}
+
+.nameInput {
+    background: #273350 !important;
+    background-color: #273350 !important;
+    width: 100%;
+    padding: 2px;
+    border: none;
+    height: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #FFFFFF;
 }
 
 .baseSelect {
