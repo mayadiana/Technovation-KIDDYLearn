@@ -2,7 +2,7 @@ import firebase from "../db/config.js";
 
 const registerForm = document.getElementById("register-form");
 
-function RegisterUser(event) {
+async function RegisterUser(event) {
     event.preventDefault();
     const lastName = event.target["lastName"].value;
     const firstName = event.target["firstName"].value;
@@ -15,23 +15,28 @@ function RegisterUser(event) {
         return;
     }
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(userCredential => {
+    try {
+        let userCredential = await firebase.auth()
+            .createUserWithEmailAndPassword(email, password);
         // Signed in
         let user = userCredential.user;
-        firebase.firestore().collection("users").set({
-            lastName: lastName,
-            firstName: firstName,
-            email: email,
+        let usersCollection = firebase.firestore().collection("users");
+        if (usersCollection) {
+            
+            await usersCollection.set({
+                lastName: lastName,
+                firstName: firstName,
+                email: email,
+            });
+            
+        }
+        location = "home.html";
 
-        }).then(() => {
-            location = "home.html";
-        });
-   }).catch(error => {
-      loading.hide();
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage);
-   });
+    } catch (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+    }
 }
 
 registerForm.onsubmit = RegisterUser;
