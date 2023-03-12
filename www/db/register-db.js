@@ -23,7 +23,7 @@ async function RegisterUser(event) {
         let usersCollection = firebase.firestore().collection("users");
         if (usersCollection) {
             
-            await usersCollection.set({
+            await usersCollection.add({
                 lastName: lastName,
                 firstName: firstName,
                 email: email,
