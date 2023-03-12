@@ -19,7 +19,8 @@
         <div class="topContainer">
             <p class="text2">Gatit</p>
         </div>
-        <div id="carousel" class="carousel slide">
+        <div id="carousel" class="relative" data-te-carousel-init data-te-carousel-slide>
+            <!--
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <ul class="instructionContainer" style="background: #E5E0FF">
@@ -44,8 +45,25 @@
                         <li>hârtie de copt</li>
                     </ul>
                 </div>
-              <div class="carousel-item">
+                <div class="carousel-item">
+                </div>
             </div>
+            -->
+            <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-item data-te-carousel-active>
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="block w-full"
+                        alt="Wild Landscape" />
+                </div>
+                <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-item>
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="block w-full" alt="Camera" />
+                </div>
+                <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-item>
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="block w-full"
+                        alt="Exotic Fruits" />
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -60,7 +78,7 @@
         <button onclick="location = '../search.html'" class="search"></button>
         <button onclick="location = '../profile.html'" class="profile"></button>
     </div>
-    
+
 </body>
 
 </html>
