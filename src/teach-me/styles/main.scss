@@ -25,12 +25,20 @@ $submit-background: $header-background;
     font-weight: 400;
 }
 
+.bg-default {
+    background-color: $header-background !important;
+}
+
+.app-header {
+    @extend .bg-default;
+    height: 138px;
+    backdrop-filter: blur(2px);
+}
+
 .topContainer {
+    @extend .app-header;
     position: fixed;
     box-sizing: border-box;
-    height: 138px;
-    background: $header-background;
-    backdrop-filter: blur(2px);
     width: 100%;
     border-radius: 0px 0px 25px 25px;
     z-index: 1;

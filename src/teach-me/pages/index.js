@@ -27,23 +27,23 @@ export default class Home extends React.Component {
                     <title>Teach Me!</title>
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <div class="topContainer">
-                    <p class="welcome-text">Bine ai revenit!</p>
+                <div className="app-header absolute inset-x-0 top-0 z-0 rounded-b-3xl">
+                    <p className="welcome-text">Bine ai revenit!</p>
                 </div>
-                <form id="login-form" class="login-form" onSubmit={e => this.login(e)}>
-                    <div class="form-group auth-container">
-                        <label class="auth-label" htmlFor="user-email">Email</label>
-                        <input class="auth-input" id="user-email" name="email" type="email" required placeholder='exemplu: ioan.popa@gmail.com' />
+                <form id="login-form" className="login-form" onSubmit={e => this.login(e)}>
+                    <div className="form-group auth-container">
+                        <label className="auth-label" htmlFor="user-email">Email</label>
+                        <input className="auth-input" id="user-email" name="email" type="email" required placeholder='exemplu: ioan.popa@gmail.com' />
                     </div>
-                    <div class="form-group auth-container">
-                        <label class="auth-label" htmlFor="user-password">Parola</label>
-                        <input class="auth-input" id="user-password" name="password" type="password" required />
+                    <div className="form-group auth-container">
+                        <label className="auth-label" htmlFor="user-password">Parola</label>
+                        <input className="auth-input" id="user-password" name="password" type="password" required />
                     </div>
-                    <div class="form-group auth-container">
-                        <button class="btn btn-primary submit-button" type="submit">Conectează-te</button>
+                    <div className="form-group auth-container">
+                        <button className="inline-block rounded-full bg-default submit-button" type="submit">Conectează-te</button>
                     </div>
-                    <div class="form-group auth-container">
-                        <p class="auth-label">Nu ai încă cont?&nbsp;<Link href="/sign-up">Înregistrează-te</Link></p>
+                    <div className="form-group auth-container">
+                        <p className="auth-label">Nu ai încă cont?&nbsp;<Link href="/sign-up" className="underline">Înregistrează-te</Link></p>
                     </div>
                 </form>
             </div>
