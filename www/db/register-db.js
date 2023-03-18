@@ -9,6 +9,7 @@ async function RegisterUser(event) {
     const email = event.target["email"].value;
     const password = event.target["password"].value;
     const confirmPassword = event.target["confirm-password"].value;
+    const birthday = event.target["birthday"].value;
 
     if (password !== confirmPassword) {
         alert("Passwords do not match");
@@ -27,6 +28,7 @@ async function RegisterUser(event) {
                 lastName: lastName,
                 firstName: firstName,
                 email: email,
+                birthday: birthday,
             });
             
         }

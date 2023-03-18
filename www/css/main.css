@@ -58,7 +58,7 @@ body {
 
 }
 
-.baseInput {
+.baseInput, .date {
     box-sizing: border-box;
     width: 90%;
     height: 54px;
@@ -166,7 +166,7 @@ body {
     width: 100%;
     margin: 0;
     left: 10%;
-    top: 19%;
+    top: 22%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -344,4 +344,6 @@ a:link {
 
 .profile.active {
     background-image: url(../assets/bottomNav/profile-filled.png);
+    height: 35px !important;
+    width: 35px !important;
 }
