@@ -7,28 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../js/profile.js">
-    <script src="../db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
+    <script src='../js/profile.js' type='module' defer></script>
     <title>Profile</title>
 </head>
 
 <body>
     <div class="body">
         <div class="topContainer" style="height: 181px;">
-            <p class="text2" style="left: 35%;">Profil</p>
+            <p class="text2" style="left: 36%;">Profil</p>
             <img class="logout" src="../assets/profile/logout.png">
             <span class="circle">
                 <img class="profileBlue" type="image" src="../assets/profile/profile-blue.png">
             </span>
         </div>
         <div class="mainDiv" style="top: 350px;">
-            <div class="fullName">
+            <div class="firstName">
                 <img type="image" src="../assets/profile/name-logo.png">
                 <input class="nameInput">
             </div>
+            <div class="lastName">
+                <img type="image" src="../assets/profile/name-logo.png">
+                <input class="nameInput">
+            </div> 
             <div class="email">
                 <img type="image" src="../assets/profile/mail-logo.png">
-                <input class="nameInput">
+                <input class="nameInput" type="email">
             </div>
             <div class="birthday">
                 <img type="image" style="margin-left: 25px;" src="../assets/profile/birthday-logo.png">

@@ -1,14 +1,15 @@
-import "../../db/config.js";
+import "../db/config.js";
 
 const logOutButton = document.querySelectorAll('.topContainer img');
-const [ firstName, lastName] = document.querySelectorAll('.fullName input');
+const firstName = document.querySelectorAll('.firstName input');
+const lastName = document.querySelectorAll('.lastName input');
 const email = document.querySelector('.email input');
 const birthday = document.querySelector('.birthday input');
 const editButton = document.querySelector('.editButton > button');
 
-(async() => {
-    const user = await firebase.auth().currentUser;
-    if (!user) location = '../../index.html';
+(() => {
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    if (!user) location = '../index.html';
     firstName.value = user.firstName;
     lastName.value = user.lastName;
     email.value = user.email;
@@ -18,7 +19,7 @@ const editButton = document.querySelector('.editButton > button');
     logOutButton.onclick = () => {
         firebase.auth().signOut();
         sessionStorage.clear();
-        setTimeout(() => location = '../../index.html', 1000);
+        setTimeout(() => location = '../index.html', 1000);
     }
     
     editButton.onclick = () => {

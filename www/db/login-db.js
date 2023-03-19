@@ -10,6 +10,10 @@ async function login(event) {
     let userCredential = await firebase
       .auth()
       .signInWithEmailAndPassword(email, password);
+    let usersResult = await firebase.firestore().collection('users').where('email', '==', userCredential.user.email).get();
+    if(!usersResult.empty) {
+      sessionStorage.setItem('user', JSON.stringify(usersResult.docs[0].data()));
+    }
     location = "html/home.html";
     // Signed in
   } catch (error) {
