@@ -1,13 +1,13 @@
 import "../db/config.js";
 
-const logOutButton = document.querySelectorAll('.topContainer img');
-const firstName = document.querySelectorAll('.firstName input');
-const lastName = document.querySelectorAll('.lastName input');
+const logOutButton = document.querySelector('.logout');
+const firstName = document.querySelector('.firstName input');
+const lastName = document.querySelector('.lastName input');
 const email = document.querySelector('.email input');
 const birthday = document.querySelector('.birthday input');
 const editButton = document.querySelector('.editButton > button');
 
-(() => {
+firebase.auth().onAuthStateChanged(() => {
     const user = JSON.parse(sessionStorage.getItem('user'));
     if (!user) location = '../index.html';
     firstName.value = user.firstName;
@@ -29,9 +29,9 @@ const editButton = document.querySelector('.editButton > button');
             email: email.value,
             birthday: birthday.value,
         }).then(() => {
-            location = 'home.html'
+            location = 'profile.html'
         }).catch(e => {
             alert('An error occured')
         })
     }
-})();
+});

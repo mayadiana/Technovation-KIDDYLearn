@@ -70,6 +70,9 @@
 
 .logout {
     position: relative;
-    height: 35px;
     left: 84%;
+}
+
+.logout>img {
+    height: 35px;
 }

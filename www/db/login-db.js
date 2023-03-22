@@ -1,3 +1,5 @@
+//import { getLoggedUser } from '../js/utils.js'
+
 const loginForm = document.getElementById("login-form");
 
 async function login(event) {
@@ -20,5 +22,13 @@ async function login(event) {
     alert(error.message);
   }
 }
+
+/*
+firebase.auth().onAuthStateChanged(async user => {
+  if (user) {
+    let user = await getLoggedUser();
+  }
+});
+*/
 
 loginForm.onsubmit = event => login(event);
