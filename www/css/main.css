@@ -58,7 +58,8 @@ body {
 
 }
 
-.baseInput, .date {
+.baseInput,
+.date {
     box-sizing: border-box;
     width: 90%;
     height: 54px;
@@ -74,9 +75,10 @@ body {
 }
 
 .mainDiv {
-    top: 138px;
-    width: 100%;
     position: relative;
+    top: 138px;
+    padding-bottom: 55px;
+    width: 100%;
     overflow-y: scroll;
 }
 
@@ -127,7 +129,7 @@ body {
     margin-right: 0;
     position: relative;
     padding-left: 20px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -147,7 +149,7 @@ body {
     margin-right: 0;
     position: relative;
     padding-left: 20px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -182,7 +184,7 @@ body {
 
 .text3 {
     position: relative;
-    width: 98%;
+    width: 90%;
     margin: 0;
     left: 20%;
     top: -15%;
@@ -230,7 +232,7 @@ button {
     margin-top: 60px;
 }
 
-.baseSearch > input {
+.baseSearch>input {
     flex-grow: 1;
     outline: none;
     width: calc(100% - 10px);
@@ -254,10 +256,17 @@ button {
 /* CAROUSEL */
 
 .carousel {
-    top: 10%;
+    position: relative;
+    top: 138px;
+    height: 72%;
 }
 
-.carousel-item {
+.carousel-inner {
+    top: 46px;
+    height: 90%
+}
+
+.item {
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 30px;
@@ -265,14 +274,13 @@ button {
 
 .instructionContainer {
     width: 77%;
-    height: 56%;
+    padding-right: 10px;
     padding-top: 20px;
+    padding-bottom: 10px;
     color: #000000;
-    background: #E5E0FF;
     border-radius: 25px;
-    position: fixed;
     overflow-y: scroll;
-    top: 165px;
+    margin-left: 11%;
 }
 
 h1 {
@@ -288,6 +296,13 @@ li {
     font-weight: 500;
 }
 
+p {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
 .arrowBack {
     position: relative;
     width: 60px;
@@ -297,7 +312,7 @@ li {
 }
 
 .bottomNav {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 55px;

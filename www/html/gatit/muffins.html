@@ -9,8 +9,17 @@
     <!-- <script src='js/main.js' type='module' defer></script> -->
     <script src='../../js/carousel.js' type='module' defer></script>
     <script src="../../db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
-    <link type="module" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link type="module" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <title>Gatit</title>
 </head>
 
@@ -22,7 +31,20 @@
             </a>
             <p class="text3">Muffins cu banane</p>
         </div>
-        <div id="carousel" class="carousel slide">
+
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <ul class="instructionContainer" style="background: #E5E0FF">
@@ -38,8 +60,9 @@
                         <li>puțin ulei</li>
                     </ul>
                 </div>
+
                 <div class="carousel-item">
-                    <ul class="intructionContainer" style="background: #E5E0FF">
+                    <ul class="instructionContainer" style="background: #E5E0FF">
                         <h1>Ai nevoie de:</h1>
                         <li>un cântar de bucătărie</li>
                         <li>2 boluri</li>
@@ -47,23 +70,34 @@
                         <li>hârtie de copt</li>
                     </ul>
                 </div>
-              <div class="carousel-item">
+
+                <div class="carousel-item">
+                    <ul class="instructionContainer" style="background: #E5E0FF">
+                        <h1>Pasul 1:</h1>
+                        <p>Într-unul dintre boluri se adaugă 200g făina, o linguriță și jumătate de praf de copt și un sfert de linguriță de sare.                        </p>
+                    </ul>
+                </div>
+
+                
             </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </div>
-    <div class="bottomNav">
-        <button onclick="location = '../home.html'" class="home"></button>
-        <button onclick="location = '../search.html'" class="search"></button>
-        <button onclick="location = '../profile.html'" class="profile"></button>
-    </div>
-    
+
+        <div class="bottomNav">
+            <button onclick="location = '../home.html'" class="home"></button>
+            <button onclick="location = '../search.html'" class="search"></button>
+            <button onclick="location = '../profile.html'" class="profile"></button>
+        </div>
+
 </body>
 
 </html>
