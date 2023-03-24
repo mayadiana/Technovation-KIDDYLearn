@@ -76,3 +76,8 @@
 .logout>img {
     height: 35px;
 }
+
+.swal2-styled {
+    border-radius: 25px !important;
+    width: 144px;
+}

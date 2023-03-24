@@ -17,11 +17,25 @@ firebase.auth().onAuthStateChanged(() => {
     sessionStorage.removeItem('user');
 
     logOutButton.onclick = () => {
-        firebase.auth().signOut();
-        sessionStorage.clear();
-        setTimeout(() => location = '../index.html', 1000);
+        Swal.fire({
+            heightAuto: false,
+            title: 'Ești sigur că vrei să te deconectezi?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#7C95E0',
+            cancelButtonColor: '#E092AA',
+            confirmButtonText: 'Deconectează-mă!',
+            cancelButtonText: 'Nu mă deconecta.'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                firebase.auth().signOut();
+                sessionStorage.clear();
+                setTimeout(() => location = '../index.html', 1000);
+            }
+        })
+
     }
-    
+
     editButton.onclick = () => {
         firebase.firestore().collection('users').doc(user.uid).update({
             firstName: firstName.value,

@@ -23,12 +23,12 @@ async function login(event) {
   }
 }
 
-/*
 firebase.auth().onAuthStateChanged(async user => {
   if (user) {
     let user = await getLoggedUser();
+    if (user) location = "html/home.html";
   }
 });
-*/
+
 
 loginForm.onsubmit = event => login(event);

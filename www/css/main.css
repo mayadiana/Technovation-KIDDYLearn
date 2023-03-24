@@ -263,7 +263,7 @@ button {
 
 .carousel-inner {
     top: 46px;
-    height: 90%
+    height: 75%;
 }
 
 .item {
@@ -284,13 +284,13 @@ button {
 }
 
 h1 {
-    font-family: 'Inter';
+    font-family: 'Inter' !important;
     font-size: 36px !important;
-    font-weight: 800 !important;
-    text-decoration: underline;
+    line-height: 10px;
+    font-weight: 900 !important;
 }
 
-li {
+li, label {
     font-family: 'Inter';
     font-size: 26px;
     font-weight: 500;
@@ -338,6 +338,24 @@ p {
 
 a:link {
     text-decoration: none;
+}
+
+.swal2-styled {
+    border-radius: 25px !important;
+}
+
+html.swal2-shown,
+body.swal2-shown {
+    overflow-y: auto !important;
+    height: 100% !important;
+}
+
+body.swal2-height-auto {
+    height: 100% !important;
+}
+
+.swal2-popup .swal2-styled:focus {
+    box-shadow: none !important;
 }
 
 .home {
