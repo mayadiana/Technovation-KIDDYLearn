@@ -1,14 +1,15 @@
-import "../../db/config.js";
+import "../db/config.js";
 
-const logOutButton = document.querySelectorAll('.topContainer img');
-const [ firstName, lastName] = document.querySelectorAll('.fullName input');
+const logOutButton = document.querySelector('.logout');
+const firstName = document.querySelector('.firstName input');
+const lastName = document.querySelector('.lastName input');
 const email = document.querySelector('.email input');
 const birthday = document.querySelector('.birthday input');
 const editButton = document.querySelector('.editButton > button');
 
-(async() => {
-    const user = await firebase.auth().currentUser;
-    if (!user) location = '../../index.html';
+firebase.auth().onAuthStateChanged(() => {
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    if (!user) location = '../index.html';
     firstName.value = user.firstName;
     lastName.value = user.lastName;
     email.value = user.email;
@@ -16,11 +17,25 @@ const editButton = document.querySelector('.editButton > button');
     sessionStorage.removeItem('user');
 
     logOutButton.onclick = () => {
-        firebase.auth().signOut();
-        sessionStorage.clear();
-        setTimeout(() => location = '../../index.html', 1000);
+        Swal.fire({
+            heightAuto: false,
+            title: 'Ești sigur că vrei să te deconectezi?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#7C95E0',
+            cancelButtonColor: '#E092AA',
+            confirmButtonText: 'Deconectează-mă!',
+            cancelButtonText: 'Nu mă deconecta.'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                firebase.auth().signOut();
+                sessionStorage.clear();
+                setTimeout(() => location = '../index.html', 1000);
+            }
+        })
+
     }
-    
+
     editButton.onclick = () => {
         firebase.firestore().collection('users').doc(user.uid).update({
             firstName: firstName.value,
@@ -28,9 +43,9 @@ const editButton = document.querySelector('.editButton > button');
             email: email.value,
             birthday: birthday.value,
         }).then(() => {
-            location = 'home.html'
+            location = 'profile.html'
         }).catch(e => {
             alert('An error occured')
         })
     }
-})();
+});

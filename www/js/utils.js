@@ -1,15 +1,23 @@
 import "../db/config.js";
 
-export const getLoggedUser = async () => {
-    let user = sessionStorage.getItem('user');
-    if (user) return JSON.parse(user);
-    return await new Promise(resolve => {
+export function getLoggedUser() {
+    return new Promise((resolve, error) => {
+        let userString = sessionStorage.getItem('user');
+        if (userString) {
+            resolve(JSON.parse(userString));
+            return;
+        }
         firebase.auth().onAuthStateChanged(async e => {
             if (!e) return resolve(null);
-            let res = await firebase.firestore().collection('users').doc(e.uid).get();
-            let user = res.data();
-            sessionStorage.setItem('user', JSON.stringify(user));
-            resolve(user);
+            try {
+                let res = await firebase.firestore().collection('users').doc(e.uid).get();
+                let user = res.data();
+                sessionStorage.setItem('user', JSON.stringify(user));
+                resolve(user);
+            }
+            catch (err) {
+                error(err);
+            }
         })
     });
 }
