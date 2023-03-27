@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <script src='../js/unavailable.js' type='module' defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="../db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
     <title>Gatit</title>
 </head>
@@ -17,14 +20,15 @@
             <p class="text2">Gătit</p>
         </div>
         <div class="mainDiv">
-            <a href="../html/gatit/omleta.html">
+            <a href="../html/cooking/omellete.html">
                 <button type="button" class="baseButton" style="background: #ADA2FF;">Omletă</button>
             </a>
-            <button type="button" class="baseButton" class="unavailable" style="background: #B6ABFE;">Macaroane cu brânză
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #B6ABFE;">Macaroane cu
+                brânză
             </button>
-            <button type="button" class="baseButton" class="unavailable" style="background: #BEB5FE;">Tiramisu
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #BEB5FE;">Tiramisu
             </button>
-            <a href="../html/gatit/muffins.html">
+            <a href="../html/cooking/muffins.html">
                 <button type="button" class="baseButton" style="background: #C6BEFE;">Muffins cu banane</button>
             </a>
         </div>
@@ -34,7 +38,7 @@
         <button onclick="location = '../html/search.html'" class="search"></button>
         <button onclick="location = '../html/profile.html'" class="profile"></button>
     </div>
-    
+
 </body>
 
 </html>

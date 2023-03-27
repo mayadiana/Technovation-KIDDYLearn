@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <script src='../js/unavailable.js' type='module' defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="../db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
     <title>Curatat</title>
 </head>
@@ -17,14 +20,14 @@
             <p class="text2">Curățat</p>
         </div>
         <div class="mainDiv">
-            <button type="button" class="baseButton" class="unavailable" style="background: #81E7AA;">Măturat
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #81E7AA;">Măturat
             </button>
-            <button type="button" class="baseButton" class="unavailable" style="background: #9AECBB;">Șters masa
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #9AECBB;">Șters masa
             </button>
-            <a href="../html/curatat/spalatJos.html">
+            <a href="../html/cleaning/wipeFloor.html">
                 <button type="button" class="baseButton" style="background: #A7EEC4;">Spălat pe jos</button>
             </a>
-            <button type="button" class="baseButton" class="unavailable" style="background: #B3F1CC;">Spălat rufe
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #B3F1CC;">Spălat rufe
             </button>
         </div>
     </div>
@@ -33,7 +36,7 @@
         <button onclick="location = '../html/search.html'" class="search"></button>
         <button onclick="location = '../html/profile.html'" class="profile"></button>
     </div>
-    
+
 </body>
 
 </html>

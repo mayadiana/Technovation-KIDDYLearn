@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <script src='../js/unavailable.js' type='module' defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="../db/config.js" type="module"></script> <!-- fisierul pentru accesarea firebase -->
-    <title>Curatat</title>
+    <title>In gradina</title>
 </head>
 
 <body>
     <div class="body">
         <div class="topContainer">
-            <p class="text2">In gradina</p>
+            <p class="text2">În grădină</p>
         </div>
         <div class="mainDiv">
-            <a href="../html/gradina/plantatFlori.html">
+            <a href="../html/garden/plant.html">
                 <button type="button" class="baseButton" style="background: #FEAB80;">Plantat flori</button>
             </a>
-            <button type="button" class="baseButton" class="unavailable" style="background: #FEB38F;">Strâns frunzele</button>
-            <button type="button" class="baseButton" class="unavailable" style="background: #FEBC9B;">Tăiat iarba</button>
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #FEB38F;">Strâns frunzele</button>
+            <button type="button" class="baseButton" data-class="unavailable" style="background: #FEBC9B;">Tăiat iarba</button>
         </div>
     </div>
     <div class="bottomNav">

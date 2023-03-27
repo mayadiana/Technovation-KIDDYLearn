@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/lessons.css">
     <script src='../../js/carousel.js' type='module' defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -19,16 +20,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <title>Curatat</title>
+    <title>In gradina</title>
 </head>
 
 <body>
     <div class="body">
         <div class="topContainer">
-            <a onclick="location = '../curatat.html'">
+            <a onclick="location = '../garden.html'">
                 <img class="arrowBack" type="image" src="../../assets/arrow-back.png">
             </a>
-            <p class="text3">Spalat pe jos</p>
+            <p class="text3">Plantat flori</p>
         </div>
 
         <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -37,46 +38,69 @@
                 <li data-target="#carousel" data-slide-to="1"></li>
                 <li data-target="#carousel" data-slide-to="2"></li>
                 <li data-target="#carousel" data-slide-to="3"></li>
-                <li data-target="#carousel" data-slide-to="4" class="lastSlide"></li>
+                <li data-target="#carousel" data-slide-to="4"></li>
+                <li data-target="#carousel" data-slide-to="5" class="lastSlide"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="carousel-item active" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E6FAEE; height: 400px;">
+                <div class="carousel-item active" data-slide="firstSlide">
+                    <ul class="instructionContainer" style="background: #FFDDCD; height: 400px;">
                         <h1>Ai nevoie de:</h1>
-                        <li>soluție de podele</li>
-                        <li>mop</li>
-                        <li>găleată de mop</li>
-                        <li>apă</li>
+                        <form action="">
+                            <div>
+                                <input type="checkbox" id="ch1" />
+                                <label for="ch1">floare</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch2" />
+                                <label for="ch2">pământ pentru flori</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch3" />
+                                <label for="ch3">lopățică</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch4" />
+                                <label for="ch4">mânuși de grădinărit</label>
+                            </div>
+                        </form>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E6FAEE">
+                    <ul class="instructionContainer" style="background: #FFDDCD; height: 400px;">
+                        <h1>Înainte de a planta:</h1>
+                        <p>Alegeti locația: o zonă cu prea mult soare direct sau prea multă umbră va fi dificil pentru unele flori să crească.</p>
+                        <p>Verifică dacă floarea pe care o crești este anuală (înfloresc doar o dată pe an și trebuie replantate anual) sau perenă (cresc înapoi în fiecare an). </p>
+                    </ul>
+                </div>
+
+                <div class="carousel-item" data-slide="slide">
+                    <ul class="instructionContainer" style="background: #FFDDCD">
                         <h1>Pasul 1:</h1>
-                        <p>Umple găleata până cand ajunge la semnul de pe galeată. </p>
+                        <p>Sapă o groapă. Dacă plantați florile din semințe, puneți-le la doar 1 cm adâncime. O floare din ghiveci va avea nevoie de o gaură la fel de adâncă ca și rădăcina cu care vine. </p>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E6FAEE">
+                    <ul class="instructionContainer" style="background: #FFDDCD">
                         <h1>Pasul 2:</h1>
-                        <p>Citește instrucțiunile de spate si pune soluția în apă după indicații.</p>
+                        <p>Scoate-ți florile pe care vreti sa le plantați din ghivece. Apoi, trageți florile din ghiveci și rupeți ușor rădăcină cu degetele. Acest lucru va ajuta rădăcinile florilor să crească în sol.</p>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E6FAEE">
+                    <ul class="instructionContainer" style="background: #FFDDCD">
                         <h1>Pasul 3:</h1>
-                        <p>Umezește mopul în apa cu soluție și stoarce-l bine înainte de a începe să speli.</p>
+                        <p>Punerea unui pic de îngrășământ va ajuta plantele noi să crească rapid. Adăugă câteva linguri în fundul fiecărei găuri și încorporează-l ușor în pământ cu degetele.</p>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="lastSlide">
-                    <ul class="instructionContainer" style="background: #E6FAEE">
+                    <ul class="instructionContainer" style="background: #FFDDCD">
                         <h1>Pasul 4:</h1>
-                        <p>Repetă Pasul 3 până când podeaua este curată.</p>
+                        <p>Așează fiecare plantă în găurile individuale pregătite. Umple spațiul gol din jurul fiecărei flori și acoperiți partea superioară a globului de rădăcină, fără ca tulpina florilor să fie acoperită.</p>
                     </ul>
                 </div>
             </div>

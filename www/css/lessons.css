@@ -1,0 +1,40 @@
+form input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+form label {
+    position: relative;
+    margin-bottom: 2px !important;
+    display: block;
+}
+
+form label::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #ddd;
+    border: 1px solid #5A5A5A;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    left: -30px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+form input[type="checkbox"]:checked+label:after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #7C95E0;
+    left: -26px;
+    top: 12px;
+    border-radius: 2px;
+    transition: .5s;
+}
+
+
+form input[type="checkbox"]:checked+label {
+    text-decoration: line-through;
+}
