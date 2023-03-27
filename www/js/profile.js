@@ -33,7 +33,6 @@ firebase.auth().onAuthStateChanged(() => {
                 setTimeout(() => location = '../index.html', 1000);
             }
         })
-
     }
 
     editButton.onclick = () => {

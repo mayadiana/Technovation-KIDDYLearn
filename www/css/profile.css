@@ -16,7 +16,10 @@
     margin: 25px;
 }
 
-.firstName, .lastName, .email, .birthday {
+.firstName,
+.lastName,
+.email,
+.birthday {
     position: relative;
     margin-top: 20px;
     padding-bottom: 15px;
@@ -25,7 +28,10 @@
     border-bottom: 2px solid #ffffff;
 }
 
-.firstName>img, .lastName>img, .email>img, .birthday >img{
+.firstName>img,
+.lastName>img,
+.email>img,
+.birthday>img {
     position: relative;
     margin-left: 30px;
     margin-right: 30px;
@@ -40,7 +46,8 @@
     filter: invert(1);
 }
 
-.nameInput , .bday{
+.nameInput,
+.bday {
     background: #273350 !important;
     background-color: #273350 !important;
     width: 70%;
@@ -54,6 +61,21 @@
     line-height: 25px;
     display: flex;
     align-items: center;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.nameSpecifier {
+    position: relative;
+    padding-top: 4px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
     text-align: left;
     color: #FFFFFF;
 }

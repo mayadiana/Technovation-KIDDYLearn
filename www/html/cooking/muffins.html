@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/lessons.css">
     <script src='../../js/carousel.js' type='module' defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -25,7 +26,7 @@
 <body>
     <div class="body">
         <div class="topContainer">
-            <a onclick="location = '../gatit.html'">
+            <a onclick="location = '../cooking.html'">
                 <img class="arrowBack" type="image" src="../../assets/arrow-back.png">
             </a>
             <p class="text3">Muffins cu banane</p>
@@ -44,35 +45,79 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="carousel-item active" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E5E0FF; height: 450px;">
+                <div class="carousel-item active" data-slide="firstSlide">
+                    <ul class="instructionContainer" style="background: #E5E0FF; height: 400px;">
                         <h1>Ingrediente:</h1>
-                        <li>200 g făină</li>
-                        <li>100 g zahăr brun</li>
-                        <li>5 banane</li>
-                        <li>1 ou</li>
-                        <li>100 g unt, la temperatura camerei</li>
-                        <li>2 linguri de lapte</li>
-                        <li>o linguriță și jumătate de praf de copt</li>
-                        <li>un sfert de linguriță de sare</li>
-                        <li>puțin ulei</li>
+                        <form action="">
+                            <div>
+                                <input type="checkbox" id="ch1" />
+                                <label for="ch1">200 g făină</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch2" />
+                                <label for="ch2">100 g zahăr brun</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch3" />
+                                <label for="ch3">5 banane</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch4" />
+                                <label for="ch4">1 ou</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch5" />
+                                <label for="ch5">100 g unt, la temperatura camerei</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch6">
+                                <label for="ch6">2 linguri de lapte</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch7">
+                                <label for="ch7">o linguriță și jumătate de praf de copt</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch8" />
+                                <label for="ch8">un sfert de linguriță de sare</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch9" />
+                                <label for="ch9">puțin ulei</label>
+                            </div>
+                        </form>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
-                    <ul class="instructionContainer" style="background: #E5E0FF">
+                    <ul class="instructionContainer" style="background: #E5E0FF; height: 400px;">
                         <h1>Ai nevoie de:</h1>
-                        <li>un cântar de bucătărie</li>
-                        <li>2 boluri</li>
-                        <li>tavă pentru muffins</li>
-                        <li>hârtie de copt</li>
+                        <form action="">
+                            <div>
+                                <input type="checkbox" id="ch10" />
+                                <label for="ch10">un cântar de bucătărie</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch11" />
+                                <label for="ch11">2 boluri</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch12" />
+                                <label for="ch12">tavă pentru muffins</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="ch13" />
+                                <label for="ch13">hârtie de copt</label>
+                            </div>
+                        </form>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
                     <ul class="instructionContainer" style="background: #E5E0FF">
                         <h1>Pasul 1:</h1>
-                        <p>Într-unul dintre boluri se adaugă 200g făina, o linguriță și jumătate de praf de copt și un sfert de linguriță de sare.</p>
+                        <p>Într-unul dintre boluri se adaugă 200g făina, o linguriță și jumătate de praf de copt și un
+                            sfert de linguriță de sare.</p>
                     </ul>
                 </div>
 
@@ -87,27 +132,30 @@
                 <div class="carousel-item" data-slide="slide">
                     <ul class="instructionContainer" style="background: #E5E0FF">
                         <h1>Pasul 3:</h1>
-                        <p>După ce ați amestecat bine, conținutul se adaugă în bolul cu făina. Celelalte 2 banane sunt tăiate cubulețe și sunt încorporate cu amestecul. </p>
+                        <p>După ce ați amestecat bine, conținutul se adaugă în bolul cu făina. Celelalte 2 banane sunt
+                            tăiate cubulețe și sunt încorporate cu amestecul. </p>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="slide">
                     <ul class="instructionContainer" style="background: #E5E0FF">
                         <h1>Pasul 4:</h1>
-                        <p>Pregătiți tava pentru muffins, adăugați hârtie de copt în forme, ungeți-le cu ulei și adăugați compoziția.</p>
+                        <p>Pregătiți tava pentru muffins, adăugați hârtie de copt în forme, ungeți-le cu ulei și
+                            adăugați compoziția.</p>
                     </ul>
                 </div>
 
                 <div class="carousel-item" data-slide="lastSlide">
                     <ul class="instructionContainer" style="background: #E5E0FF">
                         <h1>Pasul 5:</h1>
-                        <p>Se adaugă tava la cuptor și se lasă timp de 25-30 de minute + 5 minute pentru a preîncălzi cuptorul. Poftă bună!</p>
+                        <p>Se adaugă tava la cuptor și se lasă timp de 25-30 de minute + 5 minute pentru a preîncălzi
+                            cuptorul. Poftă bună!</p>
                     </ul>
                 </div>
             </div>
 
             <!-- Left and right controls -->
-             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>

@@ -26,8 +26,14 @@ $(document).ready(function () {
   });
 
   // Enable Carousel Controls
-  $(".carousel-control-prev").click(function () {
-    $("#carousel").carousel("prev");
+  $(".carousel-control-prev").click(async event => {
+    event.stopPropagation();
+    event.preventDefault();
+    if ($(".carousel-item.active").data("slide") === 'firstSlide') {
+      
+    } else {
+      $("#carousel").carousel("prev");
+    }
   });
   $(".carousel-control-next").click(async event => {
     event.stopPropagation();
