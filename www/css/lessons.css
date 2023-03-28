@@ -27,14 +27,19 @@ form input[type="checkbox"]:checked+label:after {
     position: absolute;
     width: 14px;
     height: 14px;
-    background-color: #7C95E0;
     left: -26px;
     top: 12px;
     border-radius: 2px;
     transition: .5s;
 }
 
-
 form input[type="checkbox"]:checked+label {
     text-decoration: line-through;
+}
+
+h2 {
+    font-family: 'Inter' !important;
+    font-size: 24px !important;
+    line-height: 10px;
+    font-weight: 900 !important;
 }
