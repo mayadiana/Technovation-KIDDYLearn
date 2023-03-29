@@ -266,6 +266,7 @@ button {
 .carousel-inner {
     top: 46px;
     height: 75%;
+    margin-left: 11%;
 }
 
 .item {
@@ -282,7 +283,6 @@ button {
     color: #000000;
     border-radius: 25px;
     overflow-y: scroll;
-    margin-left: 11%;
 }
 
 h1 {
