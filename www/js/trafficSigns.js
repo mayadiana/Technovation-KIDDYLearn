@@ -1,18 +1,17 @@
 // Questions will be asked
 const Questions = [{
     id: 0,
-    q: "Semnul care ne arată că urmează denivelari este:",
-    a: [{ isCorrect: false },
+    question: "Semnul care indică că urmează o curbă la dreapta este:",
+    answers: [{ isCorrect: false },
     { isCorrect: false },
     { isCorrect: true },
     { isCorrect: false }
     ]
-
 },
 {
     id: 1,
-    q: "What is Indicatorul care presemnalizează o trecere de pietoni este:",
-    a: [{ isCorrect: true, isSelected: true },
+    question: "Indicatorul care presemnalizează o trecere de pietoni este:",
+    answers: [{ isCorrect: true, isSelected: true },
     { isCorrect: false },
     { isCorrect: false },
     { isCorrect: false }
@@ -21,8 +20,8 @@ const Questions = [{
 },
 {
     id: 2,
-    q: "Semnul care ne arată că urmează denivelari este:",
-    a: [{ isCorrect: false },
+    question: "Semnul care ne arată că urmează denivelari este:",
+    answers: [{ isCorrect: false },
     { isCorrect: false },
     { isCorrect: false },
     { isCorrect: true }
@@ -31,8 +30,8 @@ const Questions = [{
 },
 {
     id: 3,
-    q: "Indicatorul care indică că urmează un sens giratoriu este:",
-    a: [{ isCorrect: false },
+    question: "Indicatorul care indică că urmează un sens giratoriu este:",
+    answers: [{ isCorrect: false },
     { isCorrect: true },
     { isCorrect: false },
     { isCorrect: false }
@@ -41,8 +40,8 @@ const Questions = [{
 },
 {
     id: 4,
-    q: "Semnul care indică că accesul biciclistilor este interzis este:",
-    a: [{ isCorrect: true },
+    question: "Semnul care indică că accesul biciclistilor este interzis este:",
+    answers: [{ isCorrect: true },
     { isCorrect: false },
     { isCorrect: false },
     { isCorrect: false }
@@ -59,70 +58,47 @@ var start = true;
 function iterate(id) {
 
     // Getting the result display section
-    var result = document.getElementsByClassName("result");
+    let result = document.getElementsByClassName("result");
     result[0].innerText = "";
 
     // Getting the question
-    const question = document.getElementById("question");
+    const q = document.getElementById("question");
 
 
     // Setting the question text
-    question.innerText = Questions[id].q;
+    q.innerText = Questions[id].question;
 
     // Getting the options
-    const op1 = document.getElementById('op1');
-    const op2 = document.getElementById('op2');
-    const op3 = document.getElementById('op3');
-    const op4 = document.getElementById('op4');
-
-
-    // Providing option text 
-    op1.innerText = Questions[id].a[0].text;
-    op2.innerText = Questions[id].a[1].text;
-    op3.innerText = Questions[id].a[2].text;
-    op4.innerText = Questions[id].a[3].text;
+    const op1 = document.getElementById("op1");
+    const op2 = document.getElementById("op2");
+    const op3 = document.getElementById("op3");
+    const op4 = document.getElementById("op4");
 
     // Providing the true or false value to the options
-    op1.value = Questions[id].a[0].isCorrect;
-    op2.value = Questions[id].a[1].isCorrect;
-    op3.value = Questions[id].a[2].isCorrect;
-    op4.value = Questions[id].a[3].isCorrect;
+    op1.value = Questions[id].answers[0].isCorrect;
+    op2.value = Questions[id].answers[1].isCorrect;
+    op3.value = Questions[id].answers[2].isCorrect;
+    op4.value = Questions[id].answers[3].isCorrect;
 
-    var selected = "";
+    let selected = "";
 
     // Show selection for op1
     op1.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightgoldenrodyellow";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
         selected = op1.value;
     })
 
     // Show selection for op2
     op2.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightgoldenrodyellow";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
         selected = op2.value;
     })
 
     // Show selection for op3
     op3.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightgoldenrodyellow";
-        op4.style.backgroundColor = "lightskyblue";
         selected = op3.value;
     })
 
     // Show selection for op4
     op4.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightgoldenrodyellow";
         selected = op4.value;
     })
 
@@ -132,10 +108,12 @@ function iterate(id) {
     // Evaluate method
     evaluate[0].addEventListener("click", () => {
         if (selected == "true") {
-            result[0].innerHTML = "True";
+            result[0].innerHTML = "Corect";
             result[0].style.color = "green";
+            $("#carousel").carousel("next");
+
         } else {
-            result[0].innerHTML = "False";
+            result[0].innerHTML = "Greșit";
             result[0].style.color = "red";
         }
     })
@@ -145,10 +123,8 @@ if (start) {
     iterate("0");
 }
 
-// Next button and method
-const next = document.getElementsByClassName('carousel-control-next')[0];
-var id = 0;
-
+let id = 0;
+const next = document.getElementsByClassName('carousel-control-next');
 next.addEventListener("click", () => {
     start = false;
     if (id < 2) {
@@ -156,5 +132,4 @@ next.addEventListener("click", () => {
         iterate(id);
         console.log(id);
     }
-
 })
