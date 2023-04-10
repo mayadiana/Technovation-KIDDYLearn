@@ -266,7 +266,7 @@ button {
 .carousel {
     position: relative;
     top: 138px;
-    height: 72%;
+    height: 78%;
 }
 
 .carousel-inner {
@@ -275,6 +275,10 @@ button {
     height: 84%;
     margin-left: 11%;
     margin-right: 11%;
+}
+
+.carousel-indicators li {
+    height: 12px !important;
 }
 
 .item {

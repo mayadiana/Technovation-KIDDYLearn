@@ -9,6 +9,11 @@ body {
     overflow-y: scroll;
 }
 
+.instructionContainer {
+    padding-left: 10px;
+    height: auto;
+}
+
 .question-container {
     font-family: 'Inter';
     font-weight: 400;

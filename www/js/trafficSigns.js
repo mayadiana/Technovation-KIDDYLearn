@@ -103,20 +103,24 @@ function iterate(id) {
     })
 
     // Grabbing the evaluate button
-    const evaluate = document.getElementsByClassName("evaluate");
+    const evaluateButtons = document.getElementsByClassName("evaluate");
 
     // Evaluate method
-    evaluate[0].addEventListener("click", () => {
-        if (selected == "true") {
-            result[0].innerHTML = "Corect";
-            result[0].style.color = "green";
-            $("#carousel").carousel("next");
+    for (let evaluateButton of evaluateButtons) {
+        evaluateButton.addEventListener("click", () => {
+            if (selected == "true") {
+                result[0].innerHTML = "Corect";
+                result[0].style.color = "green";
+                setTimeout(() => {
+                    $("#carousel").carousel("next");
+                }, 500);
 
-        } else {
-            result[0].innerHTML = "Greșit";
-            result[0].style.color = "red";
-        }
-    })
+            } else {
+                result[0].innerHTML = "Greșit";
+                result[0].style.color = "red";
+            }
+        })
+    }
 }
 
 if (start) {
@@ -124,12 +128,14 @@ if (start) {
 }
 
 let id = 0;
-const next = document.getElementsByClassName('carousel-control-next');
-next.addEventListener("click", () => {
-    start = false;
-    if (id < 2) {
-        id++;
-        iterate(id);
-        console.log(id);
-    }
-})
+const nextButtons = document.getElementsByClassName('carousel-control-next');
+for (let nextButton of nextButtons) {
+    nextButton.addEventListener("click", () => {
+        start = false;
+        if (id < 2) {
+            id++;
+            iterate(id);
+            console.log(id);
+        }
+    });
+}
