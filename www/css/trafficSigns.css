@@ -39,6 +39,7 @@ body {
 }
 
 .option {
+    padding: 2px;
     aspect-ratio: 1;
     margin: 10px;
     width: 13vh;
@@ -53,6 +54,14 @@ body {
     z-index: 2;
     left: -10px;
     top: -11px;
+}
+
+.option-green {
+    padding-color: green;
+}
+
+.option-red {
+    padding-color: red;
 }
 
 .evaluate {
