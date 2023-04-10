@@ -9,10 +9,6 @@ body {
     overflow-y: scroll;
 }
 
-.instructionContainer {
-    padding-left: 10px;
-}
-
 .question-container {
     font-family: 'Inter';
     font-weight: 400;
@@ -22,13 +18,13 @@ body {
 }
 
 .result {
-    height: 40px;
-    font-size: 35px;
+    height: 4vh;
+    font-size: 3.5vh;
     text-align: center;
+    margin-top: -12px;
 }
 
 .option-container {
-    justify-content: space-between;
     padding: 5px;
     display: flex;
     flex-direction: row;
@@ -40,15 +36,15 @@ body {
 .option {
     aspect-ratio: 1;
     margin: 10px;
-    width: 125px;
-    height: 125px;
+    width: 13vh;
+    height: 13vh;
     background-color: #ffffff;
     border-radius: 25%;
 }
 
 .option>img {
     position: relative;
-    width: 125px;
+    width: 13vh;
     z-index: 2;
     left: -10px;
     top: -11px;
@@ -56,6 +52,10 @@ body {
 
 .evaluate {
     margin-top: 15px !important;
+    align-self: center;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .navigation {
