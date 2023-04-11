@@ -30,7 +30,6 @@ body {
 }
 
 .option-container {
-    padding: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -57,21 +56,17 @@ body {
 }
 
 .option-green {
-    padding-color: green;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5px green;
 }
 
 .option-red {
-    padding-color: red;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 5px red;
 }
 
 .evaluate {
-    margin-top: 15px !important;
     align-self: center;
-    display: inline-flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.navigation {
-    width: 223px;
+    left: 7.5vh;
+    margin: 15px 0px 0px 0px;
 }
