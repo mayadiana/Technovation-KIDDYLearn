@@ -1,135 +1,127 @@
 // Questions will be asked
-const Questions = [{
-    id: 0,
-    question: "Semnul care indică că urmează o curbă la dreapta este:",
-    answers: [{ isCorrect: false },
-    { isCorrect: false },
-    { isCorrect: true },
-    { isCorrect: false }
-    ]
-},
-{
-    id: 1,
-    question: "Indicatorul care presemnalizează o trecere de pietoni este:",
-    answers: [{ isCorrect: true, isSelected: true },
-    { isCorrect: false },
-    { isCorrect: false },
-    { isCorrect: false }
-    ]
-
-},
-{
-    id: 2,
-    question: "Semnul care ne arată că urmează denivelari este:",
-    answers: [{ isCorrect: false },
-    { isCorrect: false },
-    { isCorrect: false },
-    { isCorrect: true }
-    ]
-
-},
-{
-    id: 3,
-    question: "Indicatorul care indică că urmează un sens giratoriu este:",
-    answers: [{ isCorrect: false },
-    { isCorrect: true },
-    { isCorrect: false },
-    { isCorrect: false }
-    ]
-
-},
-{
-    id: 4,
-    question: "Semnul care indică că accesul biciclistilor este interzis este:",
-    answers: [{ isCorrect: true },
-    { isCorrect: false },
-    { isCorrect: false },
-    { isCorrect: false }
-    ]
-
-},
-
-]
-
-// Set start
-var start = true;
+const Questions = [
+    {
+        id: 0,
+        question: "Semnul care indică că urmează o curbă la dreapta este:",
+        answers: [
+            { isCorrect: false, src: "../../assets/street/interzis-dreapta.png" },
+            { isCorrect: false, src: "../../assets/street/pericol.png" },
+            { isCorrect: true, src: "../../assets/street/semn-dreapta.png" },
+            { isCorrect: false, src: "../../assets/street/ceva.png" },
+        ]
+    },
+    {
+        id: 1,
+        question: "Indicatorul care presemnalizează o trecere de pietoni este:",
+        answers: [
+            { isCorrect: true, src: "../../assets/street/trecere-pietoni.png" },
+            { isCorrect: false, src: "../../assets/street/pericol.png" },
+            { isCorrect: false, src: "../../assets/street/masina.png" },
+            { isCorrect: false, src: "../../assets/street/pieton.png" },
+        ]
+    },
+    {
+        id: 2,
+        question: "Semnul care ne arată că urmează denivelari este:",
+        answers: [
+            { isCorrect: false, src: "../../assets/street/semafor.png" },
+            { isCorrect: false, src: "../../assets/street/interzis.png" },
+            { isCorrect: false, src: "../../assets/street/ambele-sensuri.png" },
+            { isCorrect: true, src: "../../assets/street/denivelari.png" },
+        ]
+    },
+    {
+        id: 3,
+        question: "Indicatorul care indică că urmează un sens giratoriu este:",
+        answers: [
+            { isCorrect: false, src: "../../assets/street/sageata-dreapta.png" },
+            { isCorrect: true, src: "../../assets/street/sens-giratoriu.png" },
+            { isCorrect: false, src: "../../assets/street/triunghi-intors.png" },
+            { isCorrect: false, src: "../../assets/street/cerc.png" },
+        ]
+    },
+    {
+        id: 4,
+        question: "Semnul care indică că accesul biciclistilor este interzis este:",
+        answers: [
+            { isCorrect: true, src: "../../assets/street/bicicleta1.png" },
+            { isCorrect: false, src: "../../assets/street/bicicleta2.png" },
+            { isCorrect: false, src: "../../assets/street/bicicleta3.png" },
+            { isCorrect: false, src: "../../assets/street/bicicleta4.png" },
+        ]
+    },
+];
 
 // Iterate
-function iterate(id) {
+function bindNextPage() {
+
+    let nextActiveItem = document.querySelector(".carousel-item.active").nextElementSibling;
+    let ulItem = nextActiveItem.querySelector("ul");
+    let pageNo = Number.parseInt(ulItem.dataset.item);
+    let pageData = Questions.find(q => q.id === pageNo);
+
+    console.info(`Binding page ${pageNo}.`);
+
+    let questionHeader = ulItem.querySelector(".question-container");
+    questionHeader.innerText = pageData.question;
+
+    let optionContainer = ulItem.querySelector(".option-container");
+    optionContainer.innerHTML = "";
+    for (let option of pageData.answers) {
+        let buttonNode = createButtonNode(option, pageData);
+        optionContainer.appendChild(buttonNode);
+    }
 
     // Getting the result display section
-    let result = document.getElementsByClassName("result");
-    result[0].innerText = "";
+    let result = ulItem.querySelector(".result");
+    result.innerText = "";
 
-    // Getting the question
-    const q = document.getElementById("question");
-
-
-    // Setting the question text
-    q.innerText = Questions[id].question;
-
-    // Getting the options
-    const op1 = document.getElementById("op1");
-    const op2 = document.getElementById("op2");
-    const op3 = document.getElementById("op3");
-    const op4 = document.getElementById("op4");
-
-    // Providing the true or false value to the options
-    op1.value = Questions[id].answers[0].isCorrect;
-    op2.value = Questions[id].answers[1].isCorrect;
-    op3.value = Questions[id].answers[2].isCorrect;
-    op4.value = Questions[id].answers[3].isCorrect;
-
-    let selected = "";
-
-    // Show selection for op1
-    op1.addEventListener("click", () => {
-        selected = op1.value;
-    })
-
-    // Show selection for op2
-    op2.addEventListener("click", () => {
-        selected = op2.value;
-    })
-
-    // Show selection for op3
-    op3.addEventListener("click", () => {
-        selected = op3.value;
-    })
-
-    // Show selection for op4
-    op4.addEventListener("click", () => {
-        selected = op4.value;
-    })
-
-    // Grabbing the evaluate button
-    const evaluate = document.getElementsByClassName("evaluate");
-
-    // Evaluate method
-    evaluate[0].addEventListener("click", () => {
-        if (selected == "true") {
-            result[0].innerHTML = "Corect";
-            result[0].style.color = "green";
-            $("#carousel").carousel("next");
-
+    // setup the evaluate button
+    let evaluateButton = ulItem.querySelector(".navigation > .evaluate");
+    evaluateButton.addEventListener("click", () => {
+        if (pageData.selected) {
+            result.innerHTML = "Corect";
+            result.style.color = "green";
+            pageData.selectedButton.className = "option option-green";
+            setTimeout(() => {
+                bindNextPage();
+                $("#carousel").carousel("next");
+            }, 700);
         } else {
-            result[0].innerHTML = "Greșit";
-            result[0].style.color = "red";
+            result.innerHTML = "Greșit";
+            result.style.color = "red";
+            pageData.selectedButton.className = "option option-red";
         }
+    });
+}
+
+const nextButtons = document.querySelectorAll('.carousel-control-next');
+for (let nextButton of nextButtons) {
+    nextButton.addEventListener("click", () => {
+        bindNextPage();
+    });
+}
+
+function createButtonNode(option, pageData) {
+    let buttonNode = document.createElement("button");
+    buttonNode.className = "option";
+    buttonNode.addEventListener("click", () => {
+        pageData.selected = option.isCorrect;
+        if(pageData.selectedButton) {
+            pageData.selectedButton.className = "option";
+        }
+        pageData.selectedButton = buttonNode;
     })
+
+    let imgNode = createImageNode(option);
+    buttonNode.appendChild(imgNode);
+    return buttonNode;
 }
 
-if (start) {
-    iterate("0");
+function createImageNode(option) {
+    let imgNode = document.createElement("img");
+    imgNode.className = "option";
+    imgNode.setAttribute("type", "image");
+    imgNode.setAttribute("src", option.src);
+    return imgNode;
 }
-
-let id = 0;
-const next = document.getElementsByClassName('carousel-control-next');
-next.addEventListener("click", () => {
-    start = false;
-    if (id < 2) {
-        id++;
-        iterate(id);
-        console.log(id);
-    }
-})
