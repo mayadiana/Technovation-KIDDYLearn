@@ -6,14 +6,15 @@ import "https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js";
 import "https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js";
 import "https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js";
 
+// To be modified with specific project internal namings
 const firebaseConfig = {
-    apiKey: "AIzaSyBbKUyVjxshmkFPr2jjdfAMC1vvi5oufQg",
-    authDomain: "com.technovation.lilmeerkats",
-    databaseURL: "https://console.firebase.google.com/u/0/project/lil-meerkats/database",
-    projectId: "lil-meerkats",
-    storageBucket: "https://console.firebase.google.com/u/0/project/lil-meerkats/storage",
-    messagingSenderId: "931282143603",
-    appId: "1: 931282143603: android: 86088e424c8eedd7e59d06",
+    apiKey: "",
+    authDomain: "AUTH_DOMAIN",
+    databaseURL: "DATABASE_URL",
+    projectId: "PROJECT_ID",
+    storageBucket: "STORAGE_BUCKET",
+    messagingSenderId: "SENDER_ID",
+    appId: "APP_ID",
 };
 
 // Initialize Firebase
